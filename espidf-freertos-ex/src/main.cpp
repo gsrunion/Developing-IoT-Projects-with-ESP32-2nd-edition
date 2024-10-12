@@ -19,7 +19,7 @@ extern "C" void app_main()
     xTaskCreatePinnedToCore(consumer, "consumer-0", 4096, (void *)0, 5, nullptr, 0);
     xTaskCreatePinnedToCore(consumer, "consumer-1", 4096, (void *)1, 5, nullptr, 1);
 
-    char buffer[256]{0};
+    char buffer[512]{0};
     vTaskList(buffer);
     ESP_LOGI(TAG, "\n%s", buffer);
 } // end of app_main
